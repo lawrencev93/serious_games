@@ -27,7 +27,7 @@
                     his foot before taking a penalty shot ? Or what exactly is responsible for that crunching tackle, how about that dramatic gallop to outpace a defender ?  We've got you covered but we won't just give it to you. We'll need you to answer a couple of questions first</p>
                 
             </div>
-            <img src="../imgs/musculoskeletal/musculoskeletal_question.png" alt="stray kids logo" class="wider">
+            <img id="no1" class="wider" src="../imgs/musculoskeletal/musculoskeletal_question.png" alt="musculoskeletal with blanks" class="wider">
         </div>
     </div>
                     
@@ -50,10 +50,10 @@
                                                       <input type="radio" id="answer1" name="question1" value="rectus_femoris" />
                                                       <label for="answer1">Rectus femoris</label><br>
                                                        </div>
-                                                   <div>
-                                                    <input type="radio" id="pectoralis_minor_1" name="question1" value="pectoralis_minor" />
-                                                   <label for="pectoralis_minor_1">Pectoralis minor</label><br>
-                                                  </div>
+                                                       <div>
+                                                        <input type="radio" id="answer1" name="question1" value="rectus_femoris_1" />
+                                                        <label for="answer1">Rectus femoris</label><br>
+                                                    </div>
                                                    <div>
                                                    <input type="radio" id="soleus_gastrocnemius_1" name="question1" value="soleus_gastrocnemius" />
                                                    <label for="soleus_gastrocnemius_1">Soleus & gastrocnemius</label><br>
@@ -192,10 +192,7 @@
                                            
                                             <fieldset>
                                             <legend>7. Please select the appropriate name for G:</legend>
-                                            <div>
-                                              <input type="radio" id="answer7" name="question7" value="deltoid" />
-                                              <label for="answer7">Deltoid</label><br>
-                                          </div>
+                                            
                                             
                                             <div>
                                                 <input type="radio" id="trapezius_7" name="question7" value="trapezius" />
@@ -213,6 +210,10 @@
                                             <div>
                                                 <input type="radio" id="soleus_7" name="question7" value="soleus" />
                                                 <label for="soleus_7">Soleus</label><br>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="answer7" name="question7" value="deltoid" />
+                                                <label for="answer7">Deltoid</label><br>
                                             </div>
                                             <div>
                                                 <input type="radio" id="supraspinatus_7" name="question7" value="supraspinatus" />
@@ -530,7 +531,7 @@
                   </fieldset>  
     </div>                    
                     
-    <div class="block-3">
+    <div id="block-3">
         <p class="quote">Here's how the male reproductive system works, briefly</p>
         
 
@@ -546,12 +547,18 @@
             <h4 style="color:white">Ready to Grade ?</h4>
             <p class="" style="color:white">Make sure all your boxes are checked and click Evaluate</p>
         </div>
-        <button class="button" style="background-color:#E5E7EB; color:#505355">EVALUATE</button>
+        
+        <div class="text">
+        <button class="button" style="background-color:#E5E7EB; color:#505355" onclick="checkSolutions()">EVALUATE</button>
+        <button id="next1" style="background-color:#E5E7EB; color:#505355;visibility:hidden;" onclick="redirect1()">PROCEED</button>
+    </div>
+
     </div>
 
     <div class="footer">
         <p>©2024</p>
     </div>
+    <script src="../scripts/musculoskeletal.js"></script>
 </body>
 
 </html>
