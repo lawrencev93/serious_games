@@ -2,6 +2,8 @@ function checkAnswers() {
 
     const solutions_5= ["answer52", "answer53","answer54","answer55","answer56","answer57","answer58","answer59","answer60","answer61","answer62","answer63"];
     var total5 = 0;
+    var audio_1 = new Audio('../effects/applause.wav');
+    var audio_2 = new Audio('../effects/failure.wav');
     
     
                for(let x=0; x<solutions_5.length;x++) {
@@ -16,15 +18,16 @@ function checkAnswers() {
                                                 }
      // alert(solutions_5.length);
     if (total5>=10) 
-        {   alert("Well played, you got over 80% and you are okay to PROCEED. You can still stay to look around if you like.");
-            
+        {   alert("Well played your total is " + total5 + " , you got over 80% and you are okay to PROCEED. You can still stay to look around if you like.");
+    audio_1.play();
             highlightAnswers();
             revealBlockThree();
             changeImage();
             revealProceed();
         }else  {
     
-         alert("Sorry you didn't score high enough, please evaluate your material. We did our best to nudge you along with a complete diagram, model answers and another video; RELOAD the page then try again");
+         alert("Sorry your score of " + total5 + " is not high enough, please evaluate your material. We did our best to nudge you along with a complete diagram, model answers and another video; RELOAD the page then try again");
+         audio_2.play();
          highlightAnswers()
          revealBlockThree();
          changeImage();
