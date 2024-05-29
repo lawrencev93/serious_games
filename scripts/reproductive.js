@@ -4,6 +4,7 @@ function checkAnswers() {
     var total4 = 0;
     var audio_1 = new Audio('../effects/applause.wav');
     var audio_2 = new Audio('../effects/failure.wav');
+    clearInterval(timerInterval);
     
     
                for(let x=0; x<solutions_4.length;x++) {
@@ -72,3 +73,34 @@ function checkAnswers() {
     
         window.location.replace("../pages/integumentary.html");
     }
+
+    var timeLimitInMinutes = 11;
+    var timeLimitInSeconds = timeLimitInMinutes * 60;
+    var timerElement = document.getElementById('countdown');
+    var timerInterval = setInterval(myTimer, 1000);
+
+
+function myTimer() {
+  
+  timeLimitInSeconds--;
+  var minutes = Math.floor(timeLimitInSeconds / 60);
+  var seconds = timeLimitInSeconds % 60;
+
+  if (timeLimitInSeconds < 0) {
+    timerElement.innerHTML = '00:00';
+    clearInterval(timerInterval);
+    alert("You have run out of time, the quiz will now auto-evaluate");
+    checkAnswers();
+    return;
+  }
+
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+
+  timerElement.innerHTML = minutes + ':' + seconds;
+
+}

@@ -4,6 +4,7 @@ const solutions_1 = ["answer21", "answer22","answer23","answer24","answer25","an
 var total = 0;
 var audio_1 = new Audio('../effects/applause.wav');
 var audio_2 = new Audio('../effects/failure.wav');
+clearInterval(timerInterval);
 
 
            for(let x=0; x<solutions_1.length;x++) {
@@ -71,4 +72,35 @@ function revealProceed() {
 function redirect1() {
 
     window.location.replace("../pages/immune.html");
+}
+
+var timeLimitInMinutes = 11;
+var timeLimitInSeconds = timeLimitInMinutes * 60;
+var timerElement = document.getElementById('countdown');
+var timerInterval = setInterval(myTimer, 1000);
+
+
+function myTimer() {
+
+timeLimitInSeconds--;
+var minutes = Math.floor(timeLimitInSeconds / 60);
+var seconds = timeLimitInSeconds % 60;
+
+if (timeLimitInSeconds < 0) {
+timerElement.innerHTML = '00:00';
+clearInterval(timerInterval);
+alert("You have run out of time, the quiz will now auto-evaluate");
+checkAnswers();
+return;
+}
+
+if (minutes < 10) {
+minutes = '0' + minutes;
+}
+if (seconds < 10) {
+seconds = '0' + seconds;
+}
+
+timerElement.innerHTML = minutes + ':' + seconds;
+
 }
