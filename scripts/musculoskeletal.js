@@ -2,6 +2,9 @@ function checkSolutions() {
 
     const solutions_2 = ["answer1", "answer2","answer3","answer4","answer5","answer6","answer7","answer8","answer9","answer10","answer11","answer12","answer13","answer14","answer15","answer16","answer17","answer18","answer19","answer20"];
     var total1 = 0;
+    var audio_1 = new Audio('../effects/applause.wav');
+    var audio_2 = new Audio('../effects/failure.wav');
+    
     
     
                for(let x=0; x<solutions_2.length;x++) {
@@ -16,15 +19,16 @@ function checkSolutions() {
                                                 }
       //alert(solutions_2.length);
     if (total1>=16) 
-        {   alert("Well played, you scored over 80%,you're free to look around or click the PROCEED button to go to the next stage");
-            
+        {   alert("Well played your total is "  +  total1 +  " and you scored over 80%,you're free to look around or click the PROCEED button to go to the next stage");
+            audio_1.play();
             highlightAnswers();
             revealBlockThree();
             changeImage();
             revealProceed();
         }else  {
     
-         alert("Sorry you didn't score high enough, please evaluate your material. We changed the diagram and provided a Youtube video for you to look through. You may also want to look at the suggested answers; get some air then have another go. Ensure that you RELOAD the page.");
+         alert("Sorry your mark" + " " +total1 + " " + "isn't high enough, please evaluate your material. We changed the diagram and provided a Youtube video for you to look through. You may also want to look at the suggested answers; get some air then have another go. Ensure that you RELOAD the page.");
+         audio_2.play();
          highlightAnswers()
          revealBlockThree();
          changeImage();
